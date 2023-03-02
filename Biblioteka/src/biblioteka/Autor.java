@@ -1,5 +1,7 @@
 package biblioteka;
 
+import java.util.Objects;
+
 public class Autor {
 
 	private String ime;
@@ -20,5 +22,27 @@ public class Autor {
 	public void setPrezime(String prezime) {
 		this.prezime = prezime;
 	}
+
+	@Override
+	public String toString() {
+		return "Autor [ime=" + ime + ", prezime=" + prezime + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(ime, prezime);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof Autor))
+			return false;
+		Autor other = (Autor) obj;
+		return Objects.equals(ime, other.ime) && Objects.equals(prezime, other.prezime);
+	}
+	
+	
 
 }
