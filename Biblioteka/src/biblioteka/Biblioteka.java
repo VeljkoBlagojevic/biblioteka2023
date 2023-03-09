@@ -27,6 +27,10 @@ public class Biblioteka implements BibliotekaIntefejs {
 
 	@Override
 	public List<Knjiga> pronadjiKnjigu(Autor autor, long ISBN, String naslov, String izdavac) {
+		if(autor == null && ISBN < 0 && naslov == null && izdavac == null) {
+			return null;
+		}
+		
 		return knjige.stream()
 				.filter(knjiga -> knjiga.getAutori().equals(autor))
 				.filter(knjiga -> knjiga.getISBN() == ISBN)
