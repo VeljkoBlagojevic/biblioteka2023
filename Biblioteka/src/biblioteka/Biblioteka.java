@@ -2,13 +2,14 @@ package biblioteka;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 import biblioteka.interfejs.BibliotekaIntefejs;
 
 public class Biblioteka implements BibliotekaIntefejs {
 
+	//poziv konstruktora ArrayListe
+	
 	private List<Knjiga> knjige = new ArrayList<Knjiga>();
 
 	@Override
